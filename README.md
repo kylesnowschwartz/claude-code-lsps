@@ -60,7 +60,7 @@ The Language Server Protocol provides IDE-like intelligence to Claude Code. On s
 
 ```bash
 claude
-/plugin marketplace add boostvolt/claude-code-lsps
+/plugin marketplace add kylesnowschwartz/claude-code-lsps
 ```
 
 ### 2. Install Plugins
@@ -471,7 +471,7 @@ The `.lsp.json` file configures the language server:
     "name": "Your Name"
   },
   "license": "MIT",
-  "repository": "https://github.com/boostvolt/claude-code-lsps"
+  "repository": "https://github.com/kylesnowschwartz/claude-code-lsps"
 }
 ```
 

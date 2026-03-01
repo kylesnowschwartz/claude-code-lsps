@@ -5,8 +5,8 @@
     "description": "LSP plugins for Claude Code",
     "version": "1.0.0",
     "license": "MIT",
-    "repository": "https://github.com/boostvolt/claude-code-lsps",
-    "homepage": "https://github.com/boostvolt/claude-code-lsps"
+    "repository": "https://github.com/kylesnowschwartz/claude-code-lsps",
+    "homepage": "https://github.com/kylesnowschwartz/claude-code-lsps"
   },
   "owner": {
     "name": "Jan Kott"

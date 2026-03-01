@@ -20,7 +20,7 @@ Please confirm you have completed the following before submitting:
 
 - [ ] I am using Claude Code v2.1.0 or later (LSP is broken in v2.0.69-v2.0.x)
 - [ ] I checked the **Plugins tab** in Claude Code (`/plugin`) for errors
-- [ ] I verified the LSP server is installed according to [Manual Installation](https://github.com/boostvolt/claude-code-lsps#manual-lsp-installation) instructions
+- [ ] I verified the LSP server is installed according to [Manual Installation](https://github.com/kylesnowschwartz/claude-code-lsps#manual-lsp-installation) instructions
 - [ ] I verified the LSP binary is in my PATH (e.g., `which gopls`, `which pyright`)
 - [ ] I checked Claude Code logs at `~/.claude/debug/` (if `--enable-lsp-logging` was used)
 

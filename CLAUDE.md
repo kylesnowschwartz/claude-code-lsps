@@ -6,6 +6,43 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a collection of LSP (Language Server Protocol) plugins for Claude Code. Each plugin enables language intelligence features (go-to-definition, find-references, hover, diagnostics) for a specific programming language.
 
+This is a fork of [kylesnowschwartz/claude-code-lsps](https://github.com/kylesnowschwartz/claude-code-lsps) (upstream), maintained independently for a specific macOS dev environment. The upstream tracks the community collection (24+ languages); this fork carries plugins and configuration tuned to Go, Ruby, Python, TypeScript, Lua, Rust, and Bash.
+
+## Installation
+
+### Prerequisites
+- Claude Code 2.0.74+
+- `ENABLE_LSP_TOOL` must be `"1"` in `~/.claude/settings.json` (the feature is not on by default)
+
+### Quick Install
+Run `./install.sh` to: enable the LSP feature flag, register this marketplace, install the 7 target plugins, and check that each LSP binary is on PATH.
+
+### Target Plugins
+
+| Plugin | Binary | Typical install |
+|--------|--------|-----------------|
+| pyright | `pyright-langserver` | `pip install pyright` |
+| gopls | `gopls` | `go install golang.org/x/tools/gopls@latest` |
+| typescript-language-server | `typescript-language-server` | `npm i -g typescript-language-server typescript` |
+| lua-language-server | `lua-language-server` | `brew install lua-language-server` |
+| bash-language-server | `bash-language-server` | `brew install bash-language-server` |
+| rust-analyzer | `rust-analyzer` | `rustup component add rust-analyzer` |
+| ruby-lsp | `ruby-lsp` | `gem install ruby-lsp` |
+
+Each plugin's `hooks/check-*.sh` attempts auto-install on session start if the binary is missing.
+
+### Verifying
+
+1. Start a new Claude Code session (LSP servers only initialize on startup)
+2. Check debug log: `cat ~/.claude/debug/latest | grep "Total LSP servers loaded"`
+3. In-session: press `Ctrl+O` for diagnostics overlay
+4. Run `claude plugin list` to confirm plugins are enabled (they sometimes land disabled after install)
+
+## Known Issues
+
+- **rootUri not passed** ([anthropics/claude-code#27220](https://github.com/anthropics/claude-code/issues/27220)): Claude Code doesn't pass workspace root to LSP servers during initialization. Servers that rely on project-root config discovery (e.g., lua-language-server reading `.luarc.json`) fall back to single-file mode. Workaround: pass `--configpath` via args in `.lsp.json`.
+- **Plugins disabled after install**: Plugins sometimes land in a disabled state. Check with `claude plugin list` and enable manually.
+
 ## Repository Structure
 
 Each plugin is a self-contained directory with this structure:
@@ -54,7 +91,19 @@ Plugins that support args/env-based logging should include `loggingConfig`:
 
 Use `${CLAUDE_PLUGIN_LSP_LOG_FILE}` for log file paths.
 
+## LSP Operations
+
+Claude Code maps natural language to these LSP operations:
+- `goToDefinition` — "Where is X defined?"
+- `findReferences` — "Find all usages of X"
+- `hover` — "What type is X?"
+- `documentSymbol` — "List all functions in this file"
+- `workspaceSymbol` — "Find the ClassName"
+- `goToImplementation` — "What implements Interface?"
+- `incomingCalls` / `outgoingCalls` — "What calls X?" / "What does X call?"
+
 ## References
 
 - [Official LSP docs](https://code.claude.com/docs/en/plugins-reference#lsp-servers)
+- [LSP setup blog post](https://karanbansal.in/blog/claude-code-lsp/) — walkthrough with debugging tips
 - Requires Claude Code 2.0.74+

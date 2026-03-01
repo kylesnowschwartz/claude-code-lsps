@@ -4,5 +4,5 @@ contact_links:
     url: https://github.com/anthropics/claude-code/issues
     about: Report issues with Claude Code itself (not LSP plugins)
   - name: Manual Installation
-    url: https://github.com/boostvolt/claude-code-lsps#manual-lsp-installation
+    url: https://github.com/kylesnowschwartz/claude-code-lsps#manual-lsp-installation
     about: Installation instructions for all LSP servers
