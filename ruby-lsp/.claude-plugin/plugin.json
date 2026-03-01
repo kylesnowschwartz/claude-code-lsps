@@ -1,0 +1,11 @@
+{
+  "name": "ruby-lsp",
+  "description": "Ruby language server (ruby-lsp)",
+  "version": "1.0.0",
+  "author": {
+    "name": "Kyle Snow Schwartz"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/kylesnowschwartz/claude-code-lsps",
+  "homepage": "https://github.com/kylesnowschwartz/claude-code-lsps"
+}

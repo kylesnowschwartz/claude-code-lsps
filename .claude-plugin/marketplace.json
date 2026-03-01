@@ -192,11 +192,22 @@
       "name": "solargraph",
       "version": "1.0.0",
       "source": "./solargraph",
-      "description": "Ruby language server",
+      "description": "Ruby language server (Solargraph)",
       "category": "development",
       "tags": ["ruby", "lsp"],
       "author": {
         "name": "Jan Kott"
+      }
+    },
+    {
+      "name": "ruby-lsp",
+      "version": "1.0.0",
+      "source": "./ruby-lsp",
+      "description": "Ruby language server (ruby-lsp)",
+      "category": "development",
+      "tags": ["ruby", "lsp"],
+      "author": {
+        "name": "Kyle Snow Schwartz"
       }
     },
     {
@@ -225,11 +236,22 @@
       "name": "vtsls",
       "version": "1.0.0",
       "source": "./vtsls",
-      "description": "TypeScript/JavaScript language server",
+      "description": "TypeScript/JavaScript language server (vtsls)",
       "category": "development",
       "tags": ["typescript", "javascript", "lsp"],
       "author": {
         "name": "Jan Kott"
+      }
+    },
+    {
+      "name": "typescript-language-server",
+      "version": "1.0.0",
+      "source": "./typescript-language-server",
+      "description": "TypeScript/JavaScript language server (typescript-language-server)",
+      "category": "development",
+      "tags": ["typescript", "javascript", "lsp"],
+      "author": {
+        "name": "Kyle Snow Schwartz"
       }
     },
     {
