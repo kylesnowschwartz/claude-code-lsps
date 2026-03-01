@@ -7,6 +7,14 @@
       ".bash": "shellscript",
       ".zsh": "shellscript",
       ".ksh": "shellscript"
+    },
+    "settings": {
+      "bashIde": {
+        "enableSourceErrorDiagnostics": true,
+        "includeAllWorkspaceSymbols": true,
+        "backgroundAnalysisMaxFiles": 500,
+        "shellcheckPath": "shellcheck"
+      }
     }
   }
 }

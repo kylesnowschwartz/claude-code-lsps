@@ -3,6 +3,23 @@
     "command": "rust-analyzer",
     "extensionToLanguage": {
       ".rs": "rust"
+    },
+    "initializationOptions": {
+      "check": {
+        "command": "clippy"
+      },
+      "cargo": {
+        "allFeatures": true,
+        "buildScripts": {
+          "enable": true
+        }
+      },
+      "procMacro": {
+        "enable": true
+      },
+      "diagnostics": {
+        "enable": true
+      }
     }
   }
 }

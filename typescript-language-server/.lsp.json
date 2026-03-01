@@ -9,6 +9,13 @@
       ".jsx": "javascriptreact",
       ".mjs": "javascript",
       ".cjs": "javascript"
+    },
+    "initializationOptions": {
+      "preferences": {
+        "includeCompletionsForModuleExports": true,
+        "includeCompletionsWithSnippetText": true,
+        "includeCompletionsForImportStatements": true
+      }
     }
   }
 }

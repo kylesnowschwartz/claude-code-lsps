@@ -6,6 +6,31 @@
       ".rake": "ruby",
       ".gemspec": "ruby",
       ".ru": "ruby"
+    },
+    "initializationOptions": {
+      "enabledFeatures": {
+        "codeActions": false,
+        "codeLens": false,
+        "completion": true,
+        "definition": true,
+        "diagnostics": true,
+        "documentHighlights": true,
+        "documentLink": false,
+        "documentSymbols": true,
+        "foldingRanges": false,
+        "formatting": false,
+        "hover": true,
+        "inlayHint": false,
+        "onTypeFormatting": false,
+        "selectionRanges": false,
+        "semanticHighlighting": false,
+        "signatureHelp": true,
+        "typeHierarchy": true,
+        "workspaceSymbol": true
+      },
+      "formatter": "auto",
+      "linters": [],
+      "experimentalFeaturesEnabled": true
     }
   }
 }

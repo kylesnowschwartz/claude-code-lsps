@@ -60,11 +60,17 @@ Each plugin is a self-contained directory with this structure:
 ## Key Files
 
 ### `.lsp.json`
-Configures the language server. Only required fields:
+Configures the language server. Required fields:
 - `command`: The LSP binary to execute
 - `extensionToLanguage`: Maps file extensions to language IDs
 
-Optional: `args`, `loggingConfig` (for debug logging support)
+Optional fields:
+- `args`: CLI arguments passed to the command
+- `settings`: Server settings delivered via `workspace/didChangeConfiguration` (PUSH). Namespace varies per server (e.g., `gopls: {...}`, `python: { analysis: {...} }`, `Lua: {...}`, `bashIde: {...}`)
+- `initializationOptions`: Sent in the LSP `initialize` request. Used by servers that read config at startup rather than via `didChangeConfiguration` (e.g., typescript-language-server, ruby-lsp, rust-analyzer)
+- `loggingConfig`: Debug logging support (see Debug Logging section)
+
+Note: Claude Code disables `workspace/configuration` PULL. Use `settings` (PUSH via `didChangeConfiguration`) or `initializationOptions` depending on what the server expects. Lifecycle fields (`restartOnCrash`, `startupTimeout`, etc.) are not yet supported and will cause initialization failure if present.
 
 ### `hooks/check-*.sh`
 Auto-install scripts that run on session start. Pattern:

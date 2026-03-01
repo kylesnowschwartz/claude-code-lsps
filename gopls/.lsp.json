@@ -3,6 +3,19 @@
     "command": "gopls",
     "extensionToLanguage": {
       ".go": "go"
+    },
+    "initializationOptions": {
+      "analyses": {
+        "unusedparams": true,
+        "shadow": true,
+        "nilness": true,
+        "unusedwrite": true,
+        "useany": true
+      },
+      "staticcheck": true,
+      "gofumpt": true,
+      "completeUnimported": true,
+      "usePlaceholders": true
     }
   }
 }

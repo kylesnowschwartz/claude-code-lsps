@@ -3,6 +3,19 @@
     "command": "lua-language-server",
     "extensionToLanguage": {
       ".lua": "lua"
+    },
+    "settings": {
+      "Lua": {
+        "runtime": {
+          "version": "LuaJIT"
+        },
+        "diagnostics": {
+          "disable": ["missing-fields"]
+        },
+        "workspace": {
+          "checkThirdParty": false
+        }
+      }
     }
   }
 }
